@@ -8,6 +8,10 @@ app.get("/home", function (res, res) {
   res.send("This is home page");
 });
 
+app.get("/test", (req, res) => {
+  res.send("This is a test page");
+});
+
 app.get("/about", function (req, res) {
   res.send("About World!");
 });
