@@ -7,7 +7,7 @@ app.get("/", (req, res) => {
     name: "Pujan",
   });
 });
-app.get("/home", function (rep, res) {
+app.get("/home", function (req, res) {
   res.send("This is home page");
 });
 
@@ -17,6 +17,31 @@ app.get("/test", (req, res) => {
 
 app.get("/about", function (req, res) {
   res.send("About World!");
+});
+
+app.get("/books", function (req, res) {
+  //logic to fetch book sfrom database
+  res.json({
+    message: "books fetched successfully",
+  });
+});
+
+app.post("/books", function (req, res) {
+  res.json({
+    message: "boooks added successfully",
+  });
+});
+
+app.delete("/books/:id", function (req, res) {
+  res.json({
+    message: "books deleted successfully.",
+  });
+});
+
+app.patch("/books/:id", function (req, req) {
+  res.json({
+    message: "books updated successfully.",
+  });
 });
 
 app.listen(3000, function () {
