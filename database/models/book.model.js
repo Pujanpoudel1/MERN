@@ -21,4 +21,4 @@ const bookModel = (sequelize, DataTypes) => {
   return Book
 }
 
-module.exports = bookModel
+module.exports = bookModel //export default bookmodel --> yesari pani garchan but not good approach
