@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-
+require("./database/connection")
 app.get("/", (req, res) => {
   // res.send("Hello World!");
   res.json({
@@ -38,7 +38,7 @@ app.delete("/books/:id", function (req, res) {
   });
 });
 
-app.patch("/books/:id", function (req, req) {
+app.patch("/books/:id", function (req, res) {
   res.json({
     message: "books updated successfully.",
   });
