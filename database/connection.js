@@ -14,8 +14,9 @@ const { Sequelize, DataTypes } = require("sequelize");
 //import gareko
 
 const sequelize = new Sequelize(
-  "postgresql://postgres.kzeidsbekxpivdmkdpac:iamthedangerskylerwhite@aws-0-ap-south-1.pooler.supabase.com:6543/postgres"
-);
+    "postgresql://postgres.kzeidsbekxpivdmkdpac:iamthedangerskylerwhite@aws-0-ap-south-1.pooler.supabase.com:5432/postgres"
+  );
+  
 
 sequelize.authenticate()
 .then(()=>{

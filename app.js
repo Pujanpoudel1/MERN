@@ -1,6 +1,10 @@
 const express = require("express");
+const { fetchBooks, addBook, deleteBook, editBook } = require("./controllers/bookController");
+const bookRoute = require("./routes/bookRoute")
+
 const app = express();
-require("./database/connection")
+require("./database/connection");
+app.use(express.json()); //ratta handine for post method
 app.get("/", (req, res) => {
   // res.send("Hello World!");
   res.json({
@@ -15,34 +19,14 @@ app.get("/test", (req, res) => {
   res.send("This is a test page");
 });
 
-app.get("/about", function (req, res) {
-  res.send("About World!");
-});
+// app.get("/about",fetchBooks );
 
-app.get("/books", function (req, res) {
-  //logic to fetch book sfrom database
-  res.json({
-    message: "books fetched successfully",
-  });
-});
+// app.post("/books", addBook);
 
-app.post("/books", function (req, res) {
-  res.json({
-    message: "boooks added successfully",
-  });
-});
+// app.delete("/books/:id", deleteBook );
 
-app.delete("/books/:id", function (req, res) {
-  res.json({
-    message: "books deleted successfully.",
-  });
-});
-
-app.patch("/books/:id", function (req, res) {
-  res.json({
-    message: "books updated successfully.",
-  });
-});
+// app.patch("/books/:id", editBook);
+app.use("/books", bookRoute)
 
 app.listen(3000, function () {
   console.log("My first project for node js");
